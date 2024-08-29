@@ -6,13 +6,15 @@ namespace DescontoSalario
     {
         static void Main(string[] args)
         {
-            Funcionario func = new Funcionario();
             Console.WriteLine("Nome:");
-            func.Nome = Console.ReadLine();
+            string nome = Console.ReadLine();
             Console.WriteLine("Salário bruto:");
-            func.SalarioBruto = double.Parse(Console.ReadLine());
+            double salarioBruto = double.Parse(Console.ReadLine());
             Console.WriteLine("Imposto:");
-            func.Imposto = double.Parse(Console.ReadLine());
+            double imposto = double.Parse(Console.ReadLine());
+
+            Funcionario func = new Funcionario(nome, salarioBruto, imposto);
+
             Console.WriteLine($"\nFuncionário:\nNome: {func.Nome}\nSalário Líquido: {func.CalcularSalarioLiquido():C}");
             Console.WriteLine("\nInforme a porcentagem de aumento:");
             func.AumentarSalario(double.Parse(Console.ReadLine()));
@@ -20,3 +22,4 @@ namespace DescontoSalario
         }
     }
 }
+

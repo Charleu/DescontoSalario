@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 
 namespace DescontoSalario
 {
@@ -9,6 +8,13 @@ namespace DescontoSalario
         public double SalarioBruto;
         public double Imposto;
 
+        public Funcionario(string nome, double salarioBruto, double imposto)
+        {
+            Nome = nome;
+            SalarioBruto = salarioBruto;
+            Imposto = imposto;
+        }
+
         public double CalcularSalarioLiquido()
         {
             return SalarioBruto - Imposto;
@@ -16,7 +22,7 @@ namespace DescontoSalario
 
         public void AumentarSalario(double porcentagem)
         {
-            SalarioBruto += SalarioBruto * porcentagem / 100.0;
+            SalarioBruto += SalarioBruto * porcentagem / 100;
         }
     }
 }
