@@ -15,14 +15,8 @@ namespace DescontoSalario
             Imposto = imposto;
         }
 
-        public double CalcularSalarioLiquido()
-        {
-            return SalarioBruto - Imposto;
-        }
+        public double CalcularSalarioLiquido() => SalarioBruto * (SalarioBruto - Imposto / 100);
 
-        public void AumentarSalario(double porcentagem)
-        {
-            SalarioBruto += SalarioBruto * porcentagem / 100;
-        }
+        public void AumentarSalario(double porcentagem) => SalarioBruto *= SalarioBruto + porcentagem / 100;
     }
 }
