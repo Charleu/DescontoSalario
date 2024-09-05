@@ -4,9 +4,27 @@ namespace DescontoSalario
 {
     public class Funcionario
     {
-        public string Nome;
-        public double SalarioBruto;
-        public double Imposto;
+        private string _nome;
+        private double _salarioBruto;
+        private double _imposto;
+
+        public string Nome
+        {
+            get { return _nome; }
+            set { _nome = value; }
+        }
+
+        public double SalarioBruto
+        {
+            get { return _salarioBruto; }
+            set { _salarioBruto = value; }
+        }
+
+        public double Imposto
+        {
+            get { return _imposto; }
+            set { _imposto = value; }
+        }
 
         public Funcionario(string nome, double salarioBruto, double imposto)
         {
@@ -15,8 +33,9 @@ namespace DescontoSalario
             Imposto = imposto;
         }
 
-        public double CalcularSalarioLiquido() => SalarioBruto * (1 - Imposto / 100);
+        public double CalcularSalarioLiquido() => SalarioBruto * (100 - Imposto) / 100;
 
-        public void AumentarSalario(double porcentagem) => SalarioBruto *= 1 + porcentagem / 100;
+        public void AumentarSalario(double porcentagem) => SalarioBruto += SalarioBruto * porcentagem / 100;
+
     }
 }
