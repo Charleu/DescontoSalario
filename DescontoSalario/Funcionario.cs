@@ -4,27 +4,9 @@ namespace DescontoSalario
 {
     public class Funcionario
     {
-        private string _nome;
-        private double _salarioBruto;
-        private double _imposto;
-
-        public string Nome
-        {
-            get { return _nome; }
-            set { _nome = value; }
-        }
-
-        public double SalarioBruto
-        {
-            get { return _salarioBruto; }
-            set { _salarioBruto = value; }
-        }
-
-        public double Imposto
-        {
-            get { return _imposto; }
-            set { _imposto = value; }
-        }
+        public string Nome { get; set; }
+        public double SalarioBruto { get; set; }
+        public double Imposto { get; set; }
 
         public Funcionario(string nome, double salarioBruto, double imposto)
         {
